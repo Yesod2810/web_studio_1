@@ -81,7 +81,6 @@ header{
 }
 .banner-title span{
     font-family: var(--Playfair);
-    color: var(--exDark);
 }
 .banner p{
     padding: 1rem 0 2rem 0;
@@ -198,9 +197,60 @@ header{
     background: #f9f9f9;
     padding: 4.5rem 0;
 }
+
+.categories {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.categories-heading h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.categories-content {
+  overflow-x: auto;
+}
+
+.categories-list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  flex: 0 0 auto;
+  width: 11.75%;
+  text-align: center;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 16px 8px;
+}
+
+.list-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.list-item a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
 .blog-content{
     margin: 2rem 0;
 }
+
 .blog-img{
     position: relative;
 }
