@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
+    <link rel="shortcut icon" href="assets/favicon/blog.png" type="image/svg+xml" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        :root{
+            --Playfair: 'Playfair Display', serif;
+            --Quicksand: 'Quicksand', sans-serif;
+            --Roboto: 'Roboto', sans-serif;
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: var(--Quicksand);
+            
+        }
+
+        body{
+            line-height: 1.4;
+            color: var(--dark);
+        }
+
+        .container{
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* header */
+        header{
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        .navbar{
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1.2rem;
+        }
+        .navbar-brand{
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-family: var(--Playfair);
+            letter-spacing: 1px;
+        }
+        .navbar-nav{
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        .navbar-nav a{
+            text-transform: uppercase;
+            font-family: var(--Roboto);
+            letter-spacing: 1px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            letter-spacing: 3px;
+            transition: opacity 0.5s ease;
+            margin-left: 2.5rem;
+        }
+        .navbar-nav a:hover{
+            opacity: 0.7;
+        }
+
+        main {
+            padding: 20px;
+        }
+        /* Title */
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .title h1 {
+            font-size: 36px;
+            color: var(--dark);
+            font-family: var(--Playfair);
+        }
+
+
+        .title p {
+            font-size: 12px;
+            color: gray;
+            font-family: var(--Playfair);
+        }
+
+        .intro {
+            margin-bottom: 20px;
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            padding: 10px 20%;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .content h2 {
+            font-size: 24px;
+            color: var(--dark);
+            font-family: var(--Playfair);
+            margin-top: 20px;
+        }
+
+        .content h3 {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+
+        .change {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .edit, .delete {
+            background-color: var(--dark);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .edit a, .delete a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #fff;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+
+        footer span {
+            display: block;
+            margin-top: 1rem;
+            font-family: var(--Playfair);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">Mediar</a>
+                <div class="navbar-nav">
+                    <a href="">services</a>
+                    <a href="./index.html">blog</a>
+                    <a href="">discussion</a>
+                    <a href="">cart</a>
+                    <a href="">profile</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title">
+            <h1>Protecting the Historical Record of Cinema</h1>
+            <h4>Film Preservation</h4>
+            <p>July 30, 2025 by Eric Johnson</p>
+        </div>
+
+        <div class="content">
+            <p class="intro">
+                In a world where digital streaming services reign supreme, 
+                it’s easy to overlook the importance of preserving physical 
+                film prints. However, these analog treasures contain a wealth 
+                of cultural and historical significance that transcends mere 
+                entertainment. Each frame tells a story, offering a glimpse 
+                into the past and allowing us to connect with the experiences 
+                of those who came before us. Without proper preservation 
+                efforts, these valuable artifacts risk being lost forever, 
+                taking with them a piece of our shared heritage.
+                <br> <br>
+                As we discuss the world of film preservation, we’ll explore the 
+                challenges archivists and preservationists face, from the threat 
+                of celluloid decay to the ever-present specter of technological 
+                obsolescence. We’ll also shine a spotlight on notable restoration 
+                projects and the institutions and organizations leading the 
+                charge in preserving cinema’s rich history. So sit back, 
+                grab some popcorn, and join us as we celebrate the art of film 
+                preservation and its vital role in safeguarding cinema’s legacy 
+                for generations to come.
+            </p>
+
+            <img src="assets/images/film_banner.jpg" alt="film" class="banner">
+
+            <h2>Understanding Film Preservation</h2>
+            <p>
+                Film preservation is like a time capsule, allowing us to peer into 
+                the past and experience moments that might otherwise have been lost 
+                to the sands of time. At its core, film preservation is about much 
+                more than just saving old movies; it’s about safeguarding our 
+                cultural heritage and ensuring that future generations can continue 
+                to enjoy the magic of cinema. In this section, we’ll take a closer 
+                look at what film preservation entails and why it’s so important.
+            </p>
+            <h2>The Historical Record of Cinema</h2>
+            <p>
+                One of the key goals of film preservation is to maintain cinema’s 
+                historical record, ensuring that future generations have access 
+                to the same films that we do today. By preserving old movies, we 
+                can gain valuable insights into the past, learning about different 
+                cultures, historical events, and societal norms through the lens 
+                of cinema. Film preservation allows us to connect with the 
+                experiences of previous generations and gain a deeper appreciation 
+                for the art form that is film.
+            </p>
+            <h2>Challenges of Film Deterioration</h2>
+            <p>Film preservation may sound straightforward, but it’s not without 
+                its challenges. Like ancient manuscripts or priceless artifacts, 
+                movies are susceptible to the ravages of time, and without proper 
+                care and attention, they can deteriorate beyond repair. In this 
+                section, we’ll explore some of the key factors contributing to 
+                film deterioration and the obstacles faced by preservationists in 
+                their efforts to save our cinematic treasures.</p>
+            <h2>Techniques and Technologies in Film Preservation and Restoration</h2>
+            <p>
+                Film preservation isn’t just about storing old movie reels in a 
+                cool, dark room. It’s a multifaceted endeavor that requires a 
+                combination of traditional techniques and cutting-edge 
+                technologies to ensure the long-term survival of our cinematic 
+                treasures. In this section, we’ll explore some of the key 
+                preservation techniques and restoration technologies used by 
+                preservationists to save our film heritage.
+            </p>
+            <h2>Classic Restoration Techniques</h2>
+            <p>
+                In addition to digitization, preservationists also rely on a 
+                variety of restoration technologies to repair and enhance damaged 
+                film prints. From scratch removal and color correction to audio 
+                cleanup and frame stabilization, these technologies enable 
+                preservationists to breathe new life into old movies, restoring 
+                them to their original glory. By carefully repairing and 
+                preserving damaged film prints, preservationists can ensure that 
+                these cinematic treasures continue to delight audiences for years 
+                to come.
+            </p>
+            <h2>Modern Restoration Techniques</h2>
+            <p>
+                One of the most exciting developments in film preservation is the 
+                advent of digital restoration techniques. Unlike traditional 
+                restoration methods, which often involve manual labor and physical 
+                alterations to film prints, digital restoration relies on computer 
+                software and algorithms to clean up and enhance movies digitally. 
+                This allows preservationists to tackle even the most challenging 
+                restoration projects with precision and efficiency, breathing new 
+                life into films that were once thought to be beyond repair.
+                <br><br>
+                Despite the advancements in preservation techniques and restoration 
+                technologies, film preservation remains an ongoing challenge. With 
+                new movies being created every day and old film prints deteriorating 
+                at an alarming rate, preservationists must continue to adapt and 
+                innovate to keep pace with the ever-changing landscape of cinema. 
+                Through their tireless efforts and dedication to the craft, 
+                preservationists ensure that our cinematic heritage remains alive and 
+                vibrant for generations to come.
+            </p>
+            <h2>In Conclusion</h2>
+            <p>
+                By preserving old movies, we not only honor the filmmakers and 
+                artists who created them but also gain valuable insights into the 
+                past and the world around us. Each film is a time capsule, 
+                offering a glimpse into a bygone era and allowing us to connect 
+                with the experiences of those who came before us. Through the 
+                dedicated efforts of preservationists and the support of 
+                institutions and organizations around the world, we can ensure 
+                that these valuable artifacts are not lost to the sands of time.
+                <br><br>
+                As we move forward, it’s important to recognize the importance of 
+                film preservation and the vital role it plays in preserving our 
+                cultural heritage. Whether it’s through supporting preservation 
+                initiatives, advocating for the importance of film preservation, 
+                or simply spreading the word about the incredible work being done 
+                in this field, we can all play a part in safeguarding cinema’s 
+                rich history for future generations to enjoy.
+            </p>
+            <div class="change">
+                <button class="edit"><a href="./edit_post.html">Edit</a></button>
+                <button class="delete"><a href="./index.html">Delete</a></button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <span>Mediar</span>
+    </footer>
+</body>
+</html>

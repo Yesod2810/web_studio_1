@@ -81,12 +81,10 @@
         main {
             padding: 20px;
         }
-        /* Title */
+
         .title {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 10px;
+            justify-content: center;
         }
 
         .title h1 {
@@ -95,58 +93,51 @@
             font-family: var(--Playfair);
         }
 
-
-        .title p {
-            font-size: 12px;
-            color: gray;
-            font-family: var(--Playfair);
-        }
-
-        .intro {
-            margin-bottom: 20px;
-        }
-
-        .banner {
-            width: 100%;
-            height: auto;
+        .form {
+            font-size: 24px;
+            color: var(--dark);
+            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .content {
-            padding: 10px 20%;
+        .post-title {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid var(--dark);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .category {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid var(--dark);
             border-radius: 5px;
             font-size: 14px;
         }
 
-        .content h2 {
-            font-size: 24px;
-            color: var(--dark);
-            font-family: var(--Playfair);
-            margin-top: 20px;
+        #content {
+            width: 95%;
+            min-height: 150px;
+            resize: vertical;
+            padding: 10px;
+            border: 1px solid var(--dark);
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: pre-wrap;
         }
 
-        .content h3 {
-            margin-top: 20px;
-            font-size: 16px;
-        }
-
-        .change {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .edit, .delete {
+        .form button {
             background-color: var(--dark);
             border: none;
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
         }
 
-        .edit a, .delete a {
+        .form button a {
             color: #fff;
             text-decoration: none;
         }
@@ -209,61 +200,33 @@
 
     <main>
         <div class="title">
-            <h1>Keeping Personal Digital Photographs</h1>
-            <h4>Digital Archives</h4>
-            <p>August 3, 2025 by Phil Michel</p>
+            <h1>Edit Post</h1>
         </div>
-
-        <div class="content">
-            <p class="intro">
-                Photos have rich personal meaning. And photos are unique: 
-                if they are lost, the information they provide can never be 
-                replaced.
-            </p>
-
-            <img src="assets/images/digital_photo_banner.jpg" alt="digial-audio" class="banner">
-
-            <h2>Archiving Tips</h2>
-            <h3>Identify where you have digital photos</h3>
-            <ul>
-                <li>Identify all your digital photos on cameras, computers and 
-                    removable media such as memory cards.</li>
-                <li>Include your photos on the Web.</li>
-            </ul>
-            <h3>Decide which photos are most important</h3>
-            <ul>
-                <li>Pick the images you feel are especially important.</li>
-                <li>You can pick a few photos or many.</li>
-                <li>If there are multiple versions of an important photo, 
-                    save the one with highest quality.</li>
-            </ul>
-            <h3>Organize the selected photos</h3>
-            <ul>
-                <li>Give individual photos descriptive file names.</li>
-                <li>Tag photos with names of people and descriptive subjects.</li>
-                <li>Create a directory/folder structure on your computer to put 
-                    the images you picked.</li>
-                <li>Write a brief description of the directory structure and 
-                    the photos.</li>
-            </ul>
-            <h3>Make copies and store them in different places</h3>
-            <ul>
-                <li>Make at least two copies of your selected photos—more copies are better.</li>
-                <li>One copy can stay on your computer or laptop; put other copies 
-                    on separate media such as DVDs, CDs, portable hard drives, thumb 
-                    drives or Internet storage.</li>
-                <li>Store copies in different locations that are as physically 
-                    far apart as practical. If disaster strikes one location, 
-                    your photographs in the other place should be safe.</li>
-                <li>Put a copy of the photo inventory with your important papers 
-                    in a secure location.</li>
-                <li>Check your photos at least once a year to make sure you can read them.</li>
-                <li>Create new media copies every five years or when necessary to avoid data loss.</li>
-            </ul>
-            <div class="change">
-                <button class="edit"><a href="./edit_post.html">Edit</a></button>
-                <button class="delete"><a href="./index.html">Delete</a></button>
-            </div>
+        <div class="form">
+            <form action="" method="get">
+            Title: <br>
+            <input type="text" name="title" class="post-title"/>
+            <br> <br>
+            Category: <br>
+            <select name="category" class="category">
+                <option value="">--Select--</option>
+                <option value="film_preservation">Film Preservation</option>
+                <option value="audio_preservation">Audio Preservation</option>
+                <option value="digital_archives">Digital Archives</option>
+                <option value="photographic_materials">Photographic Materials</option>
+                <option value="magnetic_tapes">Magnetic Tapes</option>
+                <option value="cassette">Cassette</option>
+                <option value="record_player">Record Player</option>
+            </select>
+            <br> <br>
+            Content:  <br>
+            <textarea name="content" id="content"></textarea>
+            <br> <br>
+            Image: <br>
+            <input type="file" name="image" accept="image/*">
+        </form>
+            <br>
+            <button type="submit"><a href="./index.html">Change</a></button>
         </div>
     </main>
 
