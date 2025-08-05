@@ -6,14 +6,488 @@
     <title>Mediar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Font awesome icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="shortcut icon" href="assets/favicon/blog.png" type="image/svg+xml" />
-    <link rel="stylesheet" href="interface/style/landingpage.css"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+      :root{
+          --Playfair: 'Playfair Display', serif;
+          --Quicksand: 'Quicksand', sans-serif;
+          --Roboto: 'Roboto', sans-serif;
+          --dark: #3c393d;
+          --exDark: #2b2b2b;
+      }
+      *{
+          padding: 0;
+          margin: 0;
+          font-family: var(--Quicksand);
+      }
+      body{
+          line-height: 1.4;
+          color: var(--dark);
+      }
+      img{
+          width: 100%;
+          display: block;
+      }
+      .container{
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 0 1.2rem;
+      }
+
+      /* header */
+      header{
+          min-height: 100vh;
+          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(assets/images/landingpagepic.jpg) center/cover no-repeat fixed;
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+      }
+      .navbar{
+          background: rgba(0, 0, 0, 0.6);
+          padding: 1.2rem;
+      }
+      .navbar-brand{
+          color: #fff;
+          font-size: 2rem;
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          font-family: var(--Playfair);
+          letter-spacing: 1px;
+      }
+      .navbar-nav{
+          padding: 0.8rem 0 0.2rem 0;
+          text-align: center;
+      }
+      .navbar-nav a{
+          text-transform: uppercase;
+          font-family: var(--Roboto);
+          letter-spacing: 1px;
+          font-weight: 500;
+          color: #fff;
+          text-decoration: none;
+          display: inline-block;
+          padding: 0.4rem 0.1rem;
+          letter-spacing: 3px;
+          transition: opacity 0.5s ease;
+      }
+      .navbar-nav a:hover{
+          opacity: 0.7;
+      }
+      .banner{
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: #fff;
+      }
+      .banner-title{
+          font-size: 3rem;
+          font-family: var(--Playfair);
+          line-height: 1.2;
+      }
+      .banner-title span{
+          font-family: var(--Playfair);
+      }
+      .banner p{
+          padding: 1rem 0 2rem 0;
+          font-size: 1.2rem;
+          text-transform: capitalize;
+          font-family: var(--Roboto);
+          font-weight: 300;
+          word-spacing: 2px;
+      }
+      .banner form{
+          background: #fff;
+          border-radius: 2rem;
+          padding: 0.6rem 1rem;
+          display: flex;
+          justify-content: space-between;
+      }
+      .search-input{
+          font-family: var(--Roboto);
+          font-size: 1.1rem;
+          width: 100%;
+          outline: 0;
+          padding: 0.6rem 0;
+          border: none;
+      }
+      .search-input::placeholder{
+          text-transform: capitalize;
+      }
+      .search-btn{
+          width: 40px;
+          font-size: 1.1rem;
+          color: var(--dark);
+          border: none;
+          background: transparent;
+          outline: 0;
+          cursor: pointer;
+      }
+
+      /* blog */
+      .blog{
+          background: #f9f9f9;
+          padding: 4.5rem 0;
+      }
+
+      .create {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          margin: 20px;
+      }
+
+      .create-title {
+          font-size: 40px;
+          font-weight: 600;
+          font-family: var(--Playfair);
+          text-align: center;
+          color: var(--dark);
+      }
+
+      .create-btn {
+          background-color: var(--dark);
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 20px;
+          margin: 20px;
+      }
+
+      .create-btn a {
+          color: #fff;
+          text-decoration: none;
+      }
+
+      .create-btn:hover {
+          opacity: 0.8;
+      }
+
+      .categories {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 32px 16px;
+      }
+
+      .categories-heading h2 {
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+
+      .categories-content {
+          overflow-x: auto;
+      }
+
+      .categories-list {
+          display: flex;
+          gap: 16px;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      .list-item {
+          flex: 0 0 auto;
+          width: 11.75%;
+          height: 11.75%;
+          text-align: center;
+          background-color: #f7f7f7;
+          border-radius: 8px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          padding: 16px 8px;
+
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-align: left;
+      }
+
+      .list-item:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          background-color: #fff;
+      }
+
+      .list-item a {
+          text-decoration: none;
+          font-size: 14px;
+          color: #333;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          width: 100%;
+      }
+
+      .list-item i {
+        font-size: 24px;
+        min-width: 30px;
+        color: #555;
+      }
+
+      .blog-content{
+          margin: 2rem 0;
+      }
+
+      .blog-img{
+          position: relative;
+      }
+      .blog-img span{
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background: var(--exDark);
+          color: #fff;
+          font-size: 1.4rem;
+          padding: 0.3rem 0.6rem;
+      }
+      .blog-text{
+          margin: 2.2rem 0;
+          padding: 0 1rem;
+      }
+      .blog-text span{
+          font-weight: 300;
+          display: block;
+          padding-bottom: 0.5rem;
+      }
+      .blog-text h2{
+          font-family: var(--Playfair);
+          padding: 1rem 0;
+          font-size: 1.65rem;
+          font-weight: 500;
+      }
+      .blog-text p{
+          font-weight: 300;
+          font-size: 1.1rem;
+          opacity: 0.9;
+          padding-bottom: 1.2rem;
+      }
+      .blog-text a{
+          font-family: var(--Roboto);
+          font-size: 1.1rem;
+          text-decoration: none;
+          color: var(--dark);
+          display: inline-block;
+          background: var(--dark);
+          color: #fff;
+          padding: 0.55rem 1.2rem;
+          transition: all 0.5s ease;
+      }
+      .blog-text a:hover{
+          background: var(--exDark);
+      }
+
+      /* design */
+      .design{
+          padding: 4.5rem 0;
+      }
+      .title{
+          text-align: center;
+          padding: 1rem 0;
+      }
+      .title h2{
+          font-family: var(--Playfair);
+          font-size: 2.4rem;
+      }
+      .title p{
+          text-transform: uppercase;
+          padding: 0.6rem 0;
+      }
+      .design-content{
+          margin: 2rem 0;
+      }
+      .design-item{
+          cursor: pointer;
+          margin: 1.5rem 0;
+      }
+      .design-img{
+          position: relative;
+          overflow: hidden;
+      }
+      .design-img::after{
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+      }
+      .design-img img{
+          transition:  all 0.5s ease;
+      }
+      .design-item:hover img{
+          transform: scale(1.2);
+      }
+      .design-img span:first-of-type{
+          position: absolute;
+          z-index: 1;
+          top: 10px;
+          left: 10px;
+          background: var(--exDark);
+          color: #fff;
+          padding: 0.25rem 1rem;
+      }
+      .design-img span:last-of-type{
+          position: absolute;
+          z-index: 1;
+          bottom: 10px;
+          right: 10px;
+          color: #fff;
+          font-weight: 700;
+          font-size: 1.1rem;
+      }
+      .design-title{
+          padding: 1rem;
+          font-size: 1.2rem;
+          text-align: center;
+          width: 70%;
+          margin: 0 auto;
+      }
+      .design-title a{
+          color: var(--dark);
+          text-decoration: none;
+          text-transform: capitalize;
+          font-family: var(--Playfair);
+      }
+
+      .pagination {
+          width: 100%;
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: center;
+      }
+
+      .pagination-list {
+          display: flex;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          font-family: var(--Quicksand, sans-serif);
+          gap: 0.5rem;
+      }
+
+      .pagination-item {
+          text-decoration: none;
+          color: var(--dark);
+          border: 1px solid var(--dark);
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          }
+
+      .pagination-item:hover {
+          background: var(--dark);
+          color: #fff;
+      }
+
+      /* footer */
+      footer{
+          background: var(--exDark);
+          color: #fff;
+          text-align: center;
+          padding: 2rem 0;
+      }
+      .social-links{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1.4rem;
+      }
+      .social-links a{
+          border: 2px solid #fff;
+          color: #fff;
+          display: block;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          text-decoration: none;
+          margin: 0 0.3rem;
+          transition: all 0.5s ease;
+      }
+
+      .social-links a:hover{
+          background: #fff;
+          color: var(--exDark);
+      }
+      .footer span{
+          margin-top: 1rem;
+          display: block;
+          font-family: var(--Playfair);
+          letter-spacing: 2px;
+      }
+
+      /* Media Queries */
+      @media screen and (min-width: 540px){
+          .navbar-nav a{
+              padding-right: 1.2rem;
+              padding-left: 1.2rem;
+          }
+          .banner-title{
+              font-size: 5rem;
+          }
+          .banner form{
+              margin-top: 1.4rem;
+              width: 80%;
+              margin-left: auto;
+              margin-right: auto;
+          }
+      }
+
+      @media screen and (min-width: 768px){
+          .navbar .container{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+          }
+          .search-input{
+              padding: 0.8rem 0;
+          }
+          .design-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+          }
+          .design-item{
+              margin: 0;
+          }
+          .blog-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+          }
+      }
+
+      @media screen and (min-width: 992px){
+          .blog-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+          .about-content{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              column-gap: 3rem;
+              align-items: center;
+          }
+      }
+
+      @media screen and (min-width: 1200px){
+          .design-content{
+              grid-template-columns: repeat(3, 1fr);
+          }
+      }
+    </style>
   </head>
   <body>
     <!-- header -->
@@ -22,9 +496,8 @@
         <div class="container">
           <a href="index.html" class="navbar-brand">Mediar</a>
           <div class="navbar-nav">
-            <a href="">home</a>
-            <a href="">product</a>
-            <a href="">blog</a>
+            <a href="">services</a>
+            <a href="./index.html">blog</a>
             <a href="">discussion</a>
             <a href="">cart</a>
             <a href="">profile</a>
@@ -33,7 +506,7 @@
       </nav>
       <div class="banner">
         <div class="container">
-          <h1 class="banner-title"><span>Mediar</span> Blog</h1>
+          <h1 class="banner-title"><span>Mediar</span></h1>
           <p>everything that you want to know about media products</p>
           <form>
             <input
@@ -50,6 +523,13 @@
     </header>
     <!-- end of header -->
 
+    <!-- new post -->
+    <div class="create">
+      <h2 class="create-title">Create a post to show up you to the world</h2>
+      <button class="create-btn"><a href="./create_post.html">Create post</a></button>
+    </div>
+    <!-- end of new post -->
+
     <!-- blog -->
     <section class="blog" id="blog">
       <div class="container">
@@ -63,13 +543,13 @@
           </div>
           <div class="categories-content">
             <ul class="categories-list">
-              <li class="list-item"><a href="#">Film Preservation</a></li>
-              <li class="list-item"><a href="#">Audio Preservation</a></li>
-              <li class="list-item"><a href="#">Digital Archives</a></li>
-              <li class="list-item"><a href="#">Photographic Materials</a></li>
-              <li class="list-item"><a href="#">Magnetic Tapes</a></li>
-              <li class="list-item"><a href="#">Cassette</a></li>
-              <li class="list-item"><a href="#">Record Player</a></li>
+              <li class="list-item"><a href="#"><i class="fas fa-film"></i>Film Preservation</a></li>
+              <li class="list-item"><a href="#"><i class="fas fa-music"></i>Audio Preservation</a></li>
+              <li class="list-item"><a href="#"><i class="fas fa-cloud"></i>Digital Archives</a></li>
+              <li class="list-item"><a href="#"><i class="fas fa-camera"></i>Photographic Materials</a></li>
+              <li class="list-item"><a href="#"><i class="fas fa-tape"></i>Magnetic Tapes</a></li>
+              <li class="list-item"><a href="#"><i class="fas fa-radio"></i>Cassette</a></li>
+              <li class="list-item"><a href="#"><i class="fas fa-compact-disc"></i>Record Player</a></li>
             </ul>
           </div>
         </div>
@@ -81,7 +561,7 @@
               <span><i class="far fa-heart"></i></span>
             </div>
             <div class="blog-text">
-              <span>1 January, 2025</span>
+              <span>3 August, 2025</span>
               <h2>Keeping Personal Digital Photographs</h2>
               <h4>Digital Archives</h4>
               <p>
@@ -92,7 +572,7 @@
                 and tomorrow!
               </p>
               <span>Phil Michel</span>
-              <a href="#">Read More</a>
+              <a href="./post1.html">Read More</a>
             </div>
           </div>
           <!-- end of item -->
@@ -103,7 +583,7 @@
               <span><i class="far fa-heart"></i></span>
             </div>
             <div class="blog-text">
-              <span>1 January, 2025</span>
+              <span>1 August, 2025</span>
               <h2>Keeping Personal Digital Audio</h2>
               <h4>Digital Archives</h4>
               <p>
@@ -114,7 +594,7 @@
                 come.
               </p>
               <span>Marco Jackson</span>
-              <a href="#">Read More</a>
+              <a href="./post2.html">Read More</a>
             </div>
           </div>
           <!-- end of item -->
@@ -125,7 +605,7 @@
               <span><i class="far fa-heart"></i></span>
             </div>
             <div class="blog-text">
-              <span>1 January, 2025</span>
+              <span>30 July, 2025</span>
               <h2>Protecting the Historical Record of Cinema</h2>
               <h4>Film Preservation</h4>
               <p>
@@ -150,8 +630,9 @@
               <span><i class="far fa-heart"></i></span>
             </div>
             <div class="blog-text">
-              <span>1 January, 2025</span>
+              <span>29 July, 2025</span>
               <h2>Camera preservation</h2>
+              <h4>Photographic Materials</h4>
               <p>
                 The article emphasizes the importance of caring for vintage 
                 cameras to keep them operational and retain their historical 
@@ -172,12 +653,20 @@
               <span><i class="far fa-heart"></i></span>
             </div>
             <div class="blog-text">
-              <span>1 January, 2025</span>
-              <h2>Cassettet Recording Radio preservation</h2>
+              <span>27 July, 2025</span>
+              <h2>Dan’s Rewarding Journey to Preserve Off-Air Shortwave 
+                Radio Recordings</h2>
+                <h4>Cassette</h4>
               <p>
-                /////////////////////////////////////////
+                The story of the journey to digitize and preserve cassette 
+                tapes of shortwave radio broadcasts from the 1970s to the 
+                1990s. He shares these recordings on the Shortwave Radio 
+                Audio Archive to preserve and share his radio heritage with 
+                the community. The project not only preserves personal 
+                memories but also contributes to the preservation of global 
+                radio history.
               </p>
-              <span>by </span>
+              <span>Dan Greenall</span>
               <a href="#">Read More</a>
             </div>
           </div>
@@ -189,16 +678,40 @@
               <span><i class="far fa-heart"></i></span>
             </div>
             <div class="blog-text">
-              <span>1 January, 2025</span>
-              <h2>Polaroid preservation</h2>
+              <span>23 July, 2025</span>
+              <h2>Polaroid’s Comeback: Preserving and Displaying Instant 
+                Film</h2>
+              <h4>Photographic Materials</h4>                
               <p>
-                //////////////////////////////////////
+                This article shows how to preserve and display Polaroid 
+                photos during the renaissance of instant film. Handle the 
+                film carefully while it is developing (no shaking, no folding, 
+                no cutting), keep the protective white border, and store in 
+                a cool, dry environment away from light and humidity. When 
+                displaying, use UV-filtered glass or acrylic and a shadow 
+                box or float mounting to protect the photos and emphasize the 
+                unique beauty of the instant film border.
               </p>
+              <span>Mark Rogers</span>
               <a href="#">Read More</a>
             </div>
           </div>
           <!-- end of item -->
         </div>
+        <!-- end of blog content -->
+        <!-- pagination -->
+        <div class="pagination">
+          <nav>
+            <ul class="pagination-list">
+                <li><a href="#" class="pagination-item">&lt;</a></li>
+                <li><a href="#" class="pagination-item">1</a></li>
+                <li><a href="#" class="pagination-item">2</a></li>
+                <li><a href="#" class="pagination-item">3</a></li>
+                <li><a href="#" class="pagination-item">&gt;</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- end of pagination -->
       </div>
     </section>
     <!-- end of blog -->

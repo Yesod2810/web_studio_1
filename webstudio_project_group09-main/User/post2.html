@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
+    <link rel="shortcut icon" href="assets/favicon/blog.png" type="image/svg+xml" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        :root{
+            --Playfair: 'Playfair Display', serif;
+            --Quicksand: 'Quicksand', sans-serif;
+            --Roboto: 'Roboto', sans-serif;
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: var(--Quicksand);
+            
+        }
+
+        body{
+            line-height: 1.4;
+            color: var(--dark);
+        }
+
+        .container{
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* header */
+        header{
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        .navbar{
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1.2rem;
+        }
+        .navbar-brand{
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-family: var(--Playfair);
+            letter-spacing: 1px;
+        }
+        .navbar-nav{
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        .navbar-nav a{
+            text-transform: uppercase;
+            font-family: var(--Roboto);
+            letter-spacing: 1px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            letter-spacing: 3px;
+            transition: opacity 0.5s ease;
+            margin-left: 2.5rem;
+        }
+        .navbar-nav a:hover{
+            opacity: 0.7;
+        }
+
+        main {
+            padding: 20px;
+        }
+        /* Title */
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .title h1 {
+            font-size: 36px;
+            color: var(--dark);
+            font-family: var(--Playfair);
+        }
+
+
+        .title p {
+            font-size: 12px;
+            color: gray;
+            font-family: var(--Playfair);
+        }
+
+        .intro {
+            margin-bottom: 20px;
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            padding: 10px 250px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .change {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .edit, .delete {
+            background-color: var(--dark);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .edit a, .delete a {
+            font-family: var(--Roboto);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #fff;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+
+        footer span {
+            display: block;
+            margin-top: 1rem;
+            font-family: var(--Playfair);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">Mediar</a>
+                <div class="navbar-nav">
+                    <a href="">services</a>
+                    <a href="./index.html">blog</a>
+                    <a href="">discussion</a>
+                    <a href="">cart</a>
+                    <a href="">profile</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title">
+            <h1>Keeping Personal Digital Audio</h1>
+            <h4>Digital Archives</h4>
+            <p>by Marco Jackson</p>
+        </div>
+
+        <div class="content">
+            <p class="intro">
+                You may have many digital audio files with music, lectures and 
+                other sound recordings. Some of these have personal, financial 
+                or other value that leads you to keep them for a long time.
+                <br>
+                You should make sure that the audio files you select for saving 
+                are in an open file format. This will ensure the greatest 
+                flexibility for future use.
+            </p>
+
+            <img src="assets/images/digital_audio_banner.jpg" alt="digial-audio" class="banner">
+
+            <h2>Archiving Tips</h2>
+            <h3>Identify your digital audio files</h3>
+            <ul>
+                <li>Identify your audio files on computers, audio players, 
+                    phones and removable media such as memory cards and DVDs.</li>
+                <li>Include audio files that you manage through audio software.</li>
+            </ul>
+            <h3>Decide which audio recordings have long-term value</h3>
+            <ul>
+                <li>Pick the recordings that you feel are important.</li>
+                <li>If there are multiple versions of an important 
+                    recordings, save the one with highest quality.</li>
+            </ul>
+            <h3>Export the selected audio recordings</h3>
+            <ul>
+                <li>If saving a few recordings, you can use the "save as" 
+                    command in your web browser or software program to export 
+                    them as individual files.</li>
+                <li>If saving many recordings, check into automatically exporting them.</li>
+                <li>If possible, save recordings in an open format.</li>
+                <li>Save metadata for the audio files, including the date it was exported.</li>
+            </ul>
+            <h3>Organize the selected audio recordings</h3>
+            <ul>
+                <li>Give individual audio files descriptive file names.</li>
+                <li>Tag the files with information about the recording.</li>
+                <li>Create a directory/folder structure on your computer to put the recordings you picked.</li>
+                <li>Write a brief summary of the directory structure and the recordings.</li>
+            </ul>
+            <h3>Make copies and manage them in different places</h3>
+            <ul>
+                <li>Make at least two copies of your selected audio recordings—more copies are better.</li>
+                <li>One copy can stay on your computer or laptop; put other copies on separate media 
+                    such as DVDs, CDs, portable hard drives, thumb drives or Internet storage.</li>
+                <li>Store copies in different locations that are as physically far apart as 
+                    practical. If disaster strikes one location, your audio recordings in the 
+                    other place should be safe.</li>
+                <li>Put a copy of the summary description with your important papers in a secure location.</li>
+                <li>Check your audio recordings at least once a year to make sure you can read them.</li>
+                <li>Create new media copies every five years or when necessary to avoid data loss.</li>
+            </ul>
+            <div class="change">
+                <button class="edit"><a href="./create_post.html">Edit</a></button>
+                <button class="delete"><a href="./index.html">Delete</a></button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <span>Mediar</span>
+    </footer>
+</body>
+</html>

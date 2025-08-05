@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
+    <link rel="shortcut icon" href="assets/favicon/blog.png" type="image/svg+xml" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        :root{
+            --Playfair: 'Playfair Display', serif;
+            --Quicksand: 'Quicksand', sans-serif;
+            --Roboto: 'Roboto', sans-serif;
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: var(--Quicksand);
+            
+        }
+
+        body{
+            line-height: 1.4;
+            color: var(--dark);
+        }
+
+        .container{
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* header */
+        header{
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        .navbar{
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1.2rem;
+        }
+        .navbar-brand{
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-family: var(--Playfair);
+            letter-spacing: 1px;
+        }
+        .navbar-nav{
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        .navbar-nav a{
+            text-transform: uppercase;
+            font-family: var(--Roboto);
+            letter-spacing: 1px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            letter-spacing: 3px;
+            transition: opacity 0.5s ease;
+            margin-left: 2.5rem;
+        }
+        .navbar-nav a:hover{
+            opacity: 0.7;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .title h1 {
+            font-size: 36px;
+            color: var(--dark);
+            font-family: var(--Playfair);
+        }
+
+        .form {
+            font-size: 24px;
+            color: var(--dark);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .post-title {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid var(--dark);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .category {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid var(--dark);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #content {
+            width: 95%;
+            min-height: 150px;
+            resize: vertical;
+            padding: 10px;
+            border: 1px solid var(--dark);
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        .form button {
+            background-color: var(--dark);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #fff;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+
+        footer span {
+            display: block;
+            margin-top: 1rem;
+            font-family: var(--Playfair);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">Mediar</a>
+                <div class="navbar-nav">
+                    <a href="">services</a>
+                    <a href="./index.html">blog</a>
+                    <a href="">discussion</a>
+                    <a href="">cart</a>
+                    <a href="">profile</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title">
+            <h1>Create Post</h1>
+        </div>
+        <div class="form">
+            <form action="" method="get">
+            Title: <br>
+            <input type="text" name="title" class="post-title"/>
+            <br> <br>
+            Category: <br>
+            <select name="category" class="category">
+                <option value="">--Select--</option>
+                <option value="film_preservation">Film Preservation</option>
+                <option value="audio_preservation">Audio Preservation</option>
+                <option value="digital_archives">Digital Archives</option>
+                <option value="photographic_materials">Photographic Materials</option>
+                <option value="magnetic_tapes">Magnetic Tapes</option>
+                <option value="cassette">Cassette</option>
+                <option value="record_player">Record Player</option>
+            </select>
+            <br> <br>
+            Content:  <br>
+            <textarea name="content" id="content"></textarea>
+            <br> <br>
+            Image: <br>
+            <input type="file" name="image" accept="image/*">
+        </form>
+            <br>
+            <button type="submit"><a href="./index.html">Create Post</a></button>
+        </div>
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <span>Mediar</span>
+    </footer>
+</body>
+</html>
